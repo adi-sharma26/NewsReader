@@ -1,0 +1,22 @@
+PODS:
+  - OCMock (3.9.3)
+  - SDWebImage (5.16.0):
+    - SDWebImage/Core (= 5.16.0)
+  - SDWebImage/Core (5.16.0)
+
+DEPENDENCIES:
+  - OCMock
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - OCMock
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  OCMock: 300b1b1b9155cb6378660b981c2557448830bdc6
+  SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
+
+PODFILE CHECKSUM: 1e3fbc735642539f38df9c4169c6420375b67a9f
+
+COCOAPODS: 1.14.3
