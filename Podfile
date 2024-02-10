@@ -8,11 +8,11 @@ target 'NewsReader' do
   # Pods for NewsReader
 
   pod 'SDWebImage', '~> 5.0'
-  pod 'OCMock'
 
   target 'NewsReaderTests' do
     inherit! :search_paths
     # Pods for testing
+      pod 'OCMock'
   end
 
   target 'NewsReaderUITests' do

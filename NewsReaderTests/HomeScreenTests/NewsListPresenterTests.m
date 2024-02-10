@@ -31,7 +31,7 @@
     self.mockInteractor = OCMProtocolMock(@protocol(NewsListInteractorInputProtocol));
     self.mockRouter = OCMProtocolMock(@protocol(NewsListRouterProtocol));
     self.mockView = OCMProtocolMock(@protocol(NewsListViewProtocol));
-    
+
     self.presenter = [[NewsListPresenter alloc] init];
     self.presenter.interactor = self.mockInteractor;
     self.presenter.router = self.mockRouter;
@@ -48,9 +48,9 @@
 
 - (void)testOnViewDidLoad {
     OCMExpect([self.mockInteractor fetchNews]);
-    
+
     [self.presenter onViewDidLoad];
-    
+
     OCMVerifyAll(self.mockInteractor);
 }
 
@@ -59,33 +59,33 @@
     Articles *mockArticle = [[Articles alloc] initWithDictionary:articleData];
     NSArray *mockArticles = @[mockArticle];
     OCMStub([self.mockInteractor getAllArticles]).andReturn(mockArticles);
-    
+
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     OCMExpect([self.mockRouter pushNewsDetailsViewController:OCMOCK_ANY]);
-    
+
     [self.presenter onSelectRowAtIndexPath:indexPath];
-    
+
     OCMVerifyAll(self.mockRouter);
 }
 
 - (void)testNewsFetchFailedWithError {
     NSError *mockError = [NSError errorWithDomain:@"MockDomain" code:123 userInfo:nil];
-    
+
     [self.presenter newsFetchFailedWithError:mockError];
-    
+
     OCMVerifyAll(self.mockView);
 }
 
 - (void)testNewsFetchedSuccessfully {
-    
+
     NSDictionary *articleData = @{@"title": @"Article 1"};
     Articles *mockArticle = [[Articles alloc] initWithDictionary:articleData];
     NSArray *mockArticles = @[mockArticle];
-    
+
     OCMExpect([self.mockView updateNewsFeedWithData:OCMOCK_ANY]);
-    
+
     [self.presenter newsFetchedSuccessfully:mockArticles];
-    
+
     OCMVerifyAll(self.mockView);
 }
 
@@ -94,7 +94,7 @@
     Articles *mockArticle = [[Articles alloc] initWithDictionary:articleData];
     NSArray *mockArticles = @[mockArticle];
     OCMStub([self.mockInteractor getAllArticles]).andReturn(mockArticles);
-    
+
     XCTAssertEqualObjects([self.presenter getAllArticles],
                           mockArticles,
                           @"getAllArticles should return the correct articles");

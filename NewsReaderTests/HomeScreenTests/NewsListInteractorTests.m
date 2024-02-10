@@ -35,21 +35,21 @@
 
 - (void)testFetchNewsSuccessfully {
     [self.interactor fetchNews];
-    
+
     OCMVerifyAll(self.mockOutput);
 }
 
 - (void)testGetAllArticles {
     id jsonData = [Utilities readJSONFromFile:@"articles" ofType:@"json"];
     NSArray *parsedArray = [Utilities parseJSON:jsonData toModel:[Articles class]];
-    
+
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor
                                         sortDescriptorWithKey:@"publishedAt" ascending:YES];
-    
+
     NSArray<Articles *> *sortedArray = [parsedArray sortedArrayUsingDescriptors:@[sortDescriptor]];
-    
+
     self.interactor.articles = sortedArray;
-    
+
     XCTAssertEqualObjects([self.interactor getAllArticles],
                           sortedArray,
                           @"getAllArticles should return the correct articles");

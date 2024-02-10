@@ -36,7 +36,6 @@
 		E67CC92D2B7608CD00BC8C13 /* NewsListInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E67CC92C2B7608CD00BC8C13 /* NewsListInteractorTests.m */; };
 		E67CC92F2B7608E100BC8C13 /* NewsListEntityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E67CC92E2B7608E100BC8C13 /* NewsListEntityTests.m */; };
 		E67CC9352B760A5F00BC8C13 /* NewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E67CC9342B760A5F00BC8C13 /* NewsDetailsViewController.m */; };
-		E67CC9382B76371D00BC8C13 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67CC9372B76371D00BC8C13 /* XCTest.framework */; };
 		EFADF80BA1DBF0F56DF28430 /* Pods_NewsReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D686FBA38447BE97DED6B4F0 /* Pods_NewsReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E67CC9382B76371D00BC8C13 /* XCTest.framework in Frameworks */,
 				EFADF80BA1DBF0F56DF28430 /* Pods_NewsReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +411,7 @@
 				E62CDC422B7500C000CFFA30 /* Sources */,
 				E62CDC432B7500C000CFFA30 /* Frameworks */,
 				E62CDC442B7500C000CFFA30 /* Resources */,
+				D9F2B7A4C64EE554FC1C0BD9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -600,6 +599,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D9F2B7A4C64EE554FC1C0BD9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewsReaderTests/Pods-NewsReaderTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewsReaderTests/Pods-NewsReaderTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NewsReaderTests/Pods-NewsReaderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F84AF061CCB3994E2835F21F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -748,7 +764,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -800,7 +816,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

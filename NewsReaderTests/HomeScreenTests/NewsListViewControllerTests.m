@@ -36,9 +36,9 @@
 
 - (void)testViewDidLoad {
     OCMExpect([self.mockPresenter onViewDidLoad]);
-    
+
     [self.viewController viewDidLoad];
-    
+
     OCMVerifyAll(self.mockPresenter);
 }
 
